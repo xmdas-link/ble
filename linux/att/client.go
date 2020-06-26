@@ -516,7 +516,7 @@ func (c *Client) Loop() {
 		data   []byte
 	}
 
-	ch := make(chan asyncWork, 64)
+	ch := make(chan asyncWork, 512)
 	defer close(ch)
 	go func() {
 		for w := range ch {
